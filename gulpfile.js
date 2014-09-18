@@ -98,8 +98,8 @@ gulp.task('browser-sync', function() {
 });
 
 
-// Watch Files For Changes
-gulp.task('watch', ['browser-sync'], function () {
+// Watch Files For Changes, defualt task
+gulp.task('default', ['browser-sync'], function () {
     gulp.watch(options.SASS_SOURCE, ['sass',  reload]);
     gulp.watch(options.COFFEE_SOURCE, ['coffee',  reload]);
     gulp.watch(options.IMAGE_SOURCE , ['images', reload]);
@@ -107,7 +107,7 @@ gulp.task('watch', ['browser-sync'], function () {
 
 });
 
-// Default Task build for distribution
-gulp.task('default', ['clean'], function () {
+// Build Task build for distribution
+gulp.task('build', ['clean'], function () {
     return gulp.start('sass', 'jade', 'coffee','images');
 });
