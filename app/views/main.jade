@@ -1,0 +1,28 @@
+doctype html
+html()
+  head
+    title Catchchat Operations Console
+    link(href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css')
+    // inject:css 
+    // endinject 
+  body()
+    header.cm-header-container
+      div.cm-header
+        a.cm-title(ng-href="/") Catchchat Operations Console
+    article.cm-content-container
+      div.cm-content.catch-login(ng-controller="cm-login")
+        form(ng-hide="is_loged_in" name="cmLoginForm")
+          h1.berry-colored(ng-bind="greeting")
+          p
+            input(type="text" autofocus required autocomplete="off" ng-model="input.name" placeholder="user")
+          p
+            input( required ng-model="input.password" placeholder="Password")
+          p
+            input(type="submit" value="Login" ng-click="loginAction()" ng-disabled="!cmLoginForm.$valid")
+        form(ng-show="is_loged_in" name="cmLogoutForm")
+          h1.berry-colored(ng-bind="greeting")
+          input.username-logged(type="text" value="{{user.name}}" disabled)
+    footer.cm-footer-container
+      div.cm-footer (c) 2014 Catch Inc.
+    // inject:js 
+    // endinject 

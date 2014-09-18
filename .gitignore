@@ -1,0 +1,6 @@
+*.log
+*.rdb
+.DS_Store/*
+.DS_Store
+node_modules/
+bower_components/
