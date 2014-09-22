@@ -1,5 +1,36 @@
+@font-face {
+	font-family: Dekar Light; 
+	src: url(fonts/Dekar-Light.otf);
+}
+
+@font-face {
+	font-family: Dekar; 
+	src: url(fonts/Dekar.otf);
+}
+
+@font-face {
+	font-family: Quasith Regular; 
+	src: url(fonts/Quasith-Regular.otf);
+}
+
+@-webkit-keyframes fade-in{
+    from{
+        opacity:1;
+        top:0px;
+        font-size: 6em;
+    }
+    to{
+        opacity:0;
+        top:-5px;
+    }
+}
+
 body{
 	color: #000;
+}
+
+h1 {
+		font-family: Quasith Regular;
 }
 
 .clock{
@@ -21,6 +52,7 @@ body{
 }
 
 .phone-number{
+	font-family: Dekar Light; 
 	text-align: center;
 	font-size: 2.5em;
 	line-height: 2em;
@@ -33,50 +65,55 @@ body{
 }
 
 .message-info{
+	font-family: Quasith Regular;
 	text-align: center;
-	font-size: 1em;
-	font-weight: 500;
+	font-size: 1.3em;
 	line-height: 4em;
 	letter-spacing: 0.2em;
 }
 
 .alarm-msg{
+	font-family: Dekar; 
 	text-align: center;
 	font-size: 2em;
 	line-height: 2em;
+	letter-spacing: 0.1em;
 }
 
 .alarm {
+	font-family: Dekar; 
 	text-align: center;
 	font-size: 6em;
-	font-weight: 500;
 	line-height: 1.5em;
+	-webkit-animation: fade-in 2s infinite;
+
 }
 
 .send{
 	width: 100%;
-	border-top: 1px solid #000;
-	border-bottom: 1px solid #000;
+	border: 1px solid #000;
 	border-radius: 0;
-	font-size: 1.5em;
+	font-size: 2em;
 	text-align: center;
-	background-color: #C0C0C0;
+//	background-color: #C0C0C0;
 	padding: 5px 0;
 	margin: 10px 0;
+	font-family: Dekar; 
 }
 
 
  .date>select{
+ 	font-family: Dekar; 
  	border: 1px solid #F2F2F2;
 	font-size: 2em;
 	height: 2em;
-	padding: 0 20px 0 5px;
+	padding: 5px 20px 0 5px;
 	border-radius: 0;
 	appearance:none;
 	-webkit-appearance:none;
 	background: transparent url("/images/arrow.svg") no-repeat 100% #F2F2F2;
 	display: inline-block;
-	-webkit-background-size: 21px 80%;
+	-webkit-background-size: 20px 80%;
 }
 .clocky{
 	position: relative;
@@ -104,17 +141,18 @@ body{
 }
 
 .time>select{
+	font-family: Dekar; 
 	color: #fff;
 	border: 1px solid #000;
 	border-radius: 0;
 	font-size: 2em;
 	height: 2em;
-	padding: 0 25px 0 5px;
+	padding: 5px 25px 0 5px;
 	appearance:none;
 	-webkit-appearance:none;
 	background: transparent url("/images/arrow_white.svg") no-repeat 100% #000;
 	display: inline-block;
-	-webkit-background-size: 21px 80%;
+	-webkit-background-size: 20px 80%;
 }
 
 #footer{
