@@ -38,6 +38,10 @@ var options = {
     IMAGE_SOURCE    : "./app/images/*",
     IMAGE_DEST      : "./dist/images",
  
+    // font
+    FONT_SOURCE    : "./app/styles/**/*.otf*",
+    FONT_DEST      : "./dist/css",
+
 };
 
 // Clean 
@@ -53,7 +57,12 @@ gulp.task('jade',['sass','coffee'],function () {
         .pipe(inject(gulp.src(['**/*.css', '**/*.js'],{read:false, cwd: options.DIST_DEST}), {addRootSlash: true}))
         .pipe(gulp.dest(options.JADE_DEST));
 });
- 
+// Compile Our Sass & Minify CSS
+gulp.task('font', function() {
+    return gulp.src(options.FONT_SOURCE)
+        .pipe(gulp.dest(options.FONT_DEST));
+});
+
 // Compile Our Sass & Minify CSS
 gulp.task('sass', function() {
     return gulp.src(options.SASS_SOURCE)
@@ -100,7 +109,7 @@ gulp.task('browser-sync', function() {
 
 // Watch Files For Changes, defualt task
 gulp.task('default', ['browser-sync'], function () {
-    gulp.watch(options.IMAGE_SOURCE, ['image',  reload]);
+    // gulp.watch(options.IMAGE_SOURCE, ['image',  reload]);
     gulp.watch(options.SASS_SOURCE, ['sass',  reload]);
     gulp.watch(options.COFFEE_SOURCE, ['coffee',  reload]);
     gulp.watch(options.JADE_SOURCE, ['jade',  reload]);
@@ -109,5 +118,5 @@ gulp.task('default', ['browser-sync'], function () {
 
 // Build Task build for distribution
 gulp.task('build', ['clean'], function () {
-    return gulp.start('images','sass', 'jade', 'coffee');
+    return gulp.start('images', 'font','sass', 'jade', 'coffee');
 });
