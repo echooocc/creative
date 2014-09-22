@@ -1,0 +1,105 @@
+body{
+	color: #000;
+}
+
+.clock{
+	width: 480px;
+	margin: 0 auto;
+}
+
+.header{
+	text-align: center;
+}
+
+.linebar{
+	border-bottom: 2px solid #000;
+	margin: 2px 3px;
+}
+
+.phone-title{
+	margin: 0 10px;
+}
+
+.phone-number{
+	text-align: center;
+	font-size: 2.5em;
+	line-height: 2em;
+}
+
+.message{
+	width: 100%;
+	text-align: center;
+	margin: 0 10px;
+}
+
+.message-info{
+	text-align: center;
+	font-size: 1em;
+	font-weight: 500;
+	line-height: 4em;
+	letter-spacing: 0.2em;
+}
+
+.send{
+	width: 100%;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	border-radius: 0;
+	font-size: 1.5em;
+}
+
+
+ .date>select{
+ 	border: 1px solid #F2F2F2;
+	font-size: 2em;
+	height: 2em;
+	padding: 0 20px 0 5px;
+	border-radius: 0;
+	appearance:none;
+	-webkit-appearance:none;
+	background: transparent url("/images/arrow.svg") no-repeat 100% #F2F2F2;
+	display: inline-block;
+	-webkit-background-size: 21px 80%;
+}
+.clocky{
+	position: relative;
+	width: 100%;
+	height: 80px;
+}
+
+.date{
+	position: absolute;
+	display: inline-block;
+	border-top: 2px solid #000;
+	padding: 10px 0px 5px;
+	width: 52%;
+	float: left;
+
+}
+
+.time{
+	position: absolute;
+	border-top: 2px solid #000;
+	display: inline-block;
+	width: 46%;
+	padding: 10px 5px 5px;
+	right: 0;
+}
+
+.time>select{
+	color: #fff;
+	border: 1px solid #000;
+	border-radius: 0;
+	font-size: 2em;
+	height: 2em;
+	padding: 0 25px 0 5px;
+	appearance:none;
+	-webkit-appearance:none;
+	background: transparent url("/images/arrow_white.svg") no-repeat 100% #000;
+	display: inline-block;
+	-webkit-background-size: 21px 80%;
+}
+
+
+
+
