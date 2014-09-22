@@ -4,7 +4,7 @@ body{
 
 .clock{
 	width: 480px;
-	margin: 0 auto;
+	margin: 50px auto;
 }
 
 .header{
@@ -40,12 +40,29 @@ body{
 	letter-spacing: 0.2em;
 }
 
+.alarm-msg{
+	text-align: center;
+	font-size: 2em;
+	line-height: 2em;
+}
+
+.alarm {
+	text-align: center;
+	font-size: 6em;
+	font-weight: 500;
+	line-height: 1.5em;
+}
+
 .send{
 	width: 100%;
 	border-top: 1px solid #000;
 	border-bottom: 1px solid #000;
 	border-radius: 0;
 	font-size: 1.5em;
+	text-align: center;
+	background-color: #C0C0C0;
+	padding: 5px 0;
+	margin: 10px 0;
 }
 
 
@@ -98,6 +115,15 @@ body{
 	background: transparent url("/images/arrow_white.svg") no-repeat 100% #000;
 	display: inline-block;
 	-webkit-background-size: 21px 80%;
+}
+
+#footer{
+	text-align: center;
+}
+
+.send a{
+	color: #000;
+	font-size: 1.2em;
 }
 
 
