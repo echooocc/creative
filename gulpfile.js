@@ -20,16 +20,16 @@ var reload = browserSync.reload;
 
 
 var options = {
-    // JADE / HTML
-    JADE_SOURCE     : "./app/views/*.jade",
+    // JADE 
+    JADE_SOURCE     : "./app/views/**/*.jade",
     JADE_DEST       : "./dist",
- 
+
     // SASS / CSS
-    SASS_SOURCE     : "./app/styles/*.scss",
+    SASS_SOURCE     : "./app/styles/**/*.scss",
     SASS_DEST       : "./dist/css",
  
     // JavaScript
-    COFFEE_SOURCE   : "./app/scripts/*.coffee",
+    COFFEE_SOURCE   : "./app/scripts/**/*.coffee",
     COFFEE_DEST     : "./dist/js",
  
     DIST_DEST       : "./dist",
@@ -54,7 +54,6 @@ gulp.task('jade',['sass','coffee'],function () {
         .pipe(gulp.dest(options.JADE_DEST));
 });
  
-
 // Compile Our Sass & Minify CSS
 gulp.task('sass', function() {
     return gulp.src(options.SASS_SOURCE)
@@ -67,11 +66,12 @@ gulp.task('sass', function() {
 gulp.task('coffee', function() {
     return gulp.src(options.COFFEE_SOURCE)
         .pipe(coffeelint())
+        .pipe(coffeelint.reporter())
         .pipe(coffeelint.reporter('fail'))
         .pipe(coffee())
         .pipe(concat('app.js'))
         .pipe(rename('app.js'))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest(options.COFFEE_DEST));
 });
 
@@ -92,7 +92,7 @@ gulp.task('browser-sync', function() {
     browserSync({
         server: {
             baseDir: options.DIST_DEST,
-            index: "main.html"
+            index: "index.html"
         }
     });
 });
@@ -100,14 +100,14 @@ gulp.task('browser-sync', function() {
 
 // Watch Files For Changes, defualt task
 gulp.task('default', ['browser-sync'], function () {
+    gulp.watch(options.IMAGE_SOURCE, ['image',  reload]);
     gulp.watch(options.SASS_SOURCE, ['sass',  reload]);
     gulp.watch(options.COFFEE_SOURCE, ['coffee',  reload]);
-    gulp.watch(options.IMAGE_SOURCE , ['images', reload]);
     gulp.watch(options.JADE_SOURCE, ['jade',  reload]);
-
+    // gulp.watch(options.IMAGE_SOURCE , ['images', reload]);
 });
 
 // Build Task build for distribution
 gulp.task('build', ['clean'], function () {
-    return gulp.start('sass', 'jade', 'coffee','images');
+    return gulp.start('images','sass', 'jade', 'coffee');
 });
