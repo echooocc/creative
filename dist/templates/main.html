@@ -1,0 +1,12 @@
+
+<div ng-controller="MainCtrl" class="nav-box">
+  <div class="input-banner">
+    <input type="text" name="list-item" ng-model="listitem" ng-required="{{test}}"/>
+    <button ng-click="addList()">+</button>
+  </div>
+  <div class="circle">
+    <ul class="item-list-container">
+      <li ng-repeat="item in lists" class="item-list">{{item}}</li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+.nav-box(ng-controller="MainCtrl")
+
+	.input-banner
+		input(type="text" name="list-item" ng-model="listitem"  ng-required="{{test}}")
+		button(ng-click="addList()") +
+
+
+	.circle
+		ul.item-list-container
+			li.item-list(ng-repeat="item in lists") {{item}}
+	
+
